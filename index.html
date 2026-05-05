@@ -1,183 +1,300 @@
 <!doctype html>
-<html lang="en">
+<html class="light" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scanora - Nature Scanner for iPhone</title>
+    <title>Scanora - The World in Your Pocket</title>
     <meta
       name="description"
       content="Scanora helps you identify plants and bugs from photos, save discoveries, and keep field notes on iPhone."
     />
     <link rel="canonical" href="https://scanora.space/" />
-    <meta property="og:title" content="Scanora - Nature Scanner for iPhone" />
+    <meta property="og:title" content="Scanora - The World in Your Pocket" />
     <meta
       property="og:description"
       content="Identify plants and bugs, save discoveries, and keep field notes in one simple iPhone app."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://scanora.space/" />
-    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Public+Sans:wght@600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Public+Sans:wght@300;400;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'tertiary-fixed-dim': '#7bd0ff',
+              'on-tertiary-container': '#003e55',
+              error: '#ba1a1a',
+              'surface-dim': '#d8dadc',
+              'on-secondary-container': '#684000',
+              'inverse-surface': '#2d3133',
+              'on-secondary': '#ffffff',
+              'on-background': '#191c1e',
+              'on-secondary-fixed': '#2a1700',
+              surface: '#f7f9fb',
+              'tertiary-fixed': '#c4e7ff',
+              'primary-fixed': '#6ffbbe',
+              'surface-container': '#eceef0',
+              secondary: '#855300',
+              outline: '#6c7a71',
+              'on-surface': '#191c1e',
+              'on-error': '#ffffff',
+              'surface-container-lowest': '#ffffff',
+              'inverse-primary': '#4edea3',
+              'secondary-fixed-dim': '#ffb95f',
+              'primary-fixed-dim': '#4edea3',
+              'surface-container-high': '#e6e8ea',
+              primary: '#006c49',
+              'secondary-container': '#fea619',
+              'on-primary-fixed': '#002113',
+              'outline-variant': '#bbcabf',
+              'inverse-on-surface': '#eff1f3',
+              'surface-tint': '#006c49',
+              background: '#f7f9fb',
+              'on-primary': '#ffffff',
+              'on-primary-fixed-variant': '#005236',
+              'on-error-container': '#93000a',
+              'primary-container': '#10b981',
+              'tertiary-container': '#19aee8',
+              'surface-bright': '#f7f9fb',
+              'error-container': '#ffdad6',
+              'surface-variant': '#e0e3e5',
+              'surface-container-low': '#f2f4f6',
+              'on-tertiary-fixed-variant': '#004c69',
+              'on-tertiary': '#ffffff',
+              tertiary: '#00668a',
+              'on-tertiary-fixed': '#001e2c',
+              'on-secondary-fixed-variant': '#653e00',
+              'on-primary-container': '#00422b',
+              'on-surface-variant': '#3c4a42',
+              'surface-container-highest': '#e0e3e5',
+              'secondary-fixed': '#ffddb8',
+            },
+            borderRadius: {
+              DEFAULT: '1rem',
+              lg: '2rem',
+              xl: '3rem',
+              full: '9999px',
+            },
+            fontFamily: {
+              headline: ['Public Sans', 'sans-serif'],
+              display: ['Public Sans', 'sans-serif'],
+              body: ['Inter', 'sans-serif'],
+              label: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .ambient-shadow {
+        box-shadow: 0 20px 40px -10px rgba(25, 28, 30, 0.05);
+      }
+
+      .gradient-btn {
+        background: linear-gradient(135deg, #006c49 0%, #10b981 100%);
+      }
+
+      .gradient-btn:active {
+        transform: scale(0.96);
+      }
+    </style>
   </head>
-  <body>
-    <div class="site-shell">
-      <header class="nav">
-        <a class="brand" href="./index.html" aria-label="Scanora home">
-          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-            <circle cx="14" cy="30" r="8" fill="currentColor" opacity="0.9"></circle>
-            <circle cx="28" cy="14" r="10" fill="currentColor"></circle>
-            <circle cx="32" cy="34" r="6" fill="currentColor" opacity="0.78"></circle>
+  <body
+    class="bg-background text-on-background font-body antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <header
+      class="flex items-center justify-between whitespace-nowrap bg-surface-container-lowest/80 backdrop-blur-md px-6 md:px-10 py-4 sticky top-0 z-50 ambient-shadow"
+    >
+      <a class="flex items-center gap-4 text-primary no-underline" href="/" aria-label="Scanora home">
+        <div class="size-6">
+          <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              clip-rule="evenodd"
+              d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            ></path>
           </svg>
+        </div>
+        <h2 class="text-primary font-display text-xl font-bold leading-tight tracking-[-0.015em]">
           Scanora
-        </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#features">Features</a>
-          <a href="#privacy">Privacy</a>
-          <a href="./privacy.html">Privacy Policy</a>
-          <a href="./terms.html">Terms</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="hero">
-          <div class="hero-grid">
-            <div class="hero-copy">
-              <p class="eyebrow">Botanical intelligence</p>
-              <h1>The field guide that fits in your pocket.</h1>
-              <p>
-                Identify plants and bugs from a photo, save your discoveries, and keep simple field
-                notes wherever curiosity finds you.
-              </p>
-              <div class="hero-actions">
-                <a class="button" href="#download">Coming soon for iPhone</a>
-                <a class="button secondary" href="./privacy.html">Read Privacy Policy</a>
-              </div>
-              <p class="availability">Built for iPhone. No account required for the MVP.</p>
-            </div>
-
-            <div class="phone-stage" aria-label="Scanora app preview">
-              <div class="phone-glow"></div>
-              <div class="phone">
-                <div class="phone-screen">
-                  <div class="phone-notch"></div>
-                  <div class="scan-frame">
-                    <div class="scan-target"></div>
-                  </div>
-                  <div class="phone-card">
-                    <span class="pill">Best effort match</span>
-                    <h3>Common milkweed</h3>
-                    <p>
-                      A flowering plant known for supporting monarch caterpillars and attracting
-                      pollinators.
-                    </p>
-                    <div class="confidence">
-                      <div class="confidence-bar"><span></span></div>
-                      <strong>82%</strong>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section soft" id="features">
-          <div class="section-inner">
-            <div class="section-heading">
-              <p class="eyebrow">Features</p>
-              <h2>Discover nature with a simple scan.</h2>
-              <p>
-                Scanora keeps the first version focused: fast photo-based identification, helpful
-                facts, saved history, and notes for things you want to remember.
-              </p>
-            </div>
-
-            <div class="feature-grid">
-              <article class="feature-card">
-                <div class="icon">⌁</div>
-                <h3>Photo identification</h3>
-                <p>
-                  Use the camera or photo library to get a best-effort plant or bug identification
-                  with confidence and alternatives.
-                </p>
-              </article>
-              <article class="feature-card">
-                <div class="icon">✎</div>
-                <h3>Field notes</h3>
-                <p>
-                  Save discoveries and add one private note so each scan can become part of your
-                  personal field guide.
-                </p>
-              </article>
-              <article class="feature-card">
-                <div class="icon">↺</div>
-                <h3>Saved history</h3>
-                <p>
-                  Revisit past scans, facts, and notes from your device without needing to create an
-                  account.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="privacy">
-          <div class="section-inner">
-            <div class="privacy-band">
-              <div>
-                <p class="eyebrow" style="color: rgba(255,255,255,0.72)">Privacy-minded MVP</p>
-                <h2>Designed to work without an account.</h2>
-                <p>
-                  Scanora’s MVP is local-first. Your scan history and saved notes stay on your
-                  device. Purchases are handled by Apple and RevenueCat.
-                </p>
-              </div>
-              <div class="privacy-list">
-                <div>No account required</div>
-                <div>Saved scans stay on-device</div>
-                <div>Best-effort results, not expert advice</div>
-                <div>Subscription status via Apple/RevenueCat</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section soft" id="download">
-          <div class="section-inner">
-            <div class="support-card">
-              <p class="eyebrow">Launch</p>
-              <h2>Coming soon to the App Store.</h2>
-              <p>
-                Scanora is being prepared for iPhone release. For support, privacy, or App Store
-                review questions, contact <a href="mailto:support@scanora.space">support@scanora.space</a>.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <div class="footer-inner">
-          <a class="brand" href="./index.html" aria-label="Scanora home">
-            <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-              <circle cx="14" cy="30" r="8" fill="currentColor" opacity="0.9"></circle>
-              <circle cx="28" cy="14" r="10" fill="currentColor"></circle>
-              <circle cx="32" cy="34" r="6" fill="currentColor" opacity="0.78"></circle>
-            </svg>
-            Scanora
+        </h2>
+      </a>
+      <nav class="hidden sm:flex flex-1 justify-end gap-8" aria-label="Primary navigation">
+        <div class="flex items-center gap-9">
+          <a
+            class="text-on-surface text-sm font-label font-medium hover:text-primary transition-colors"
+            href="#features"
+          >
+            Features
           </a>
-          <div class="footer-links">
-            <a href="./privacy.html">Privacy Policy</a>
-            <a href="./terms.html">Terms of Service</a>
-            <a href="mailto:support@scanora.space">Support</a>
+        </div>
+        <a
+          class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 gradient-btn text-on-primary font-label text-sm font-bold leading-normal tracking-[0.015em] transition-transform duration-200 no-underline"
+          href="#download"
+        >
+          <span class="truncate">Download</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="flex-grow flex flex-col">
+      <section
+        class="relative w-full min-h-[85vh] flex items-center pt-8 pb-16 px-6 lg:px-16 overflow-hidden bg-surface"
+      >
+        <div
+          class="absolute right-0 top-0 w-3/4 h-full bg-surface-container-low rounded-bl-xl z-0 pointer-events-none"
+        ></div>
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center z-10">
+          <div class="flex flex-col gap-8 max-w-xl pl-0 lg:pl-12">
+            <div class="flex flex-col gap-4">
+              <span class="text-primary font-label text-sm font-bold uppercase tracking-widest">
+                Botanical Intelligence
+              </span>
+              <h1
+                class="text-on-background font-display text-5xl lg:text-7xl font-black leading-[1.1] tracking-[-0.02em]"
+              >
+                The World in Your Pocket
+              </h1>
+              <p class="text-on-surface-variant font-body text-lg lg:text-xl font-normal leading-relaxed mt-2">
+                Identify plants and bugs instantly with Scanora's AI-powered field guide. Currently
+                exclusive to iOS.
+              </p>
+            </div>
+            <div class="flex items-center pt-4" id="download">
+              <a
+                class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-8 gradient-btn text-on-primary font-label text-base font-bold leading-normal tracking-[0.015em] ambient-shadow transition-transform duration-200 no-underline"
+                href="mailto:support@scanora.space?subject=Scanora%20App%20Store%20launch"
+              >
+                <span class="truncate">Download on the App Store</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="relative flex justify-center items-center h-[600px] lg:h-[800px]">
+            <div
+              class="absolute inset-0 bg-primary-container/10 blur-3xl rounded-full w-2/3 h-2/3 m-auto transform translate-x-12 translate-y-12 z-0"
+            ></div>
+            <img
+              class="relative z-10 h-full w-auto object-contain drop-shadow-2xl max-h-[800px]"
+              alt="Scanora iPhone app preview"
+              src="https://lh3.googleusercontent.com/aida/ADBb0uiYnsfaGv4cPy9SPhB-xXZbw9ES1jVnv8wMA0rTUvPfa6sbGHF7HrxRLAPYTIbI1ghBM5vtOu8wQ2iDH9MQKFUtED1wTwZCK_0Rd-XzwyeAI61KWqSnTix11a9wKzO5vU1_eXqn9hMe2Yf8AxH3AU5j0xWNYCRkWVUqn9b7nyvoEb6cEPh2zdOH7ZHxn8-qXvxZ4WYGgNl7MwC0ukWPx3DeZRmHhNklc2ei8YD3gYpUQo3LoG2mzaTXRNc"
+            />
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+
+      <section class="w-full py-24 px-6 lg:px-16 bg-surface-container-low" id="features">
+        <div class="container mx-auto flex flex-col gap-16">
+          <div class="flex flex-col gap-4 pl-0 lg:pl-12">
+            <span class="text-primary font-label text-sm font-bold uppercase tracking-widest">
+              Features
+            </span>
+            <h2
+              class="text-on-background font-display text-4xl lg:text-5xl font-black leading-tight tracking-[-0.02em] max-w-2xl"
+            >
+              Discover Nature With Precision
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-0 lg:px-12">
+            <article class="flex flex-col gap-6 bg-surface-container-lowest p-8 rounded-xl ambient-shadow">
+              <div class="w-14 h-14 rounded-full bg-primary-container/20 flex items-center justify-center text-primary mb-2">
+                <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">
+                  camera
+                </span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-on-background font-display text-2xl font-bold leading-tight">
+                  Instant Identification
+                </h3>
+                <p class="text-on-surface-variant font-body text-base font-normal leading-relaxed">
+                  Pick a photo or use your camera to identify plants and bugs with fast, best-effort
+                  results.
+                </p>
+              </div>
+            </article>
+
+            <article class="flex flex-col gap-6 bg-surface-container-lowest p-8 rounded-xl ambient-shadow">
+              <div class="w-14 h-14 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary mb-2">
+                <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">
+                  stylus_pencil
+                </span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-on-background font-display text-2xl font-bold leading-tight">
+                  Field Notes
+                </h3>
+                <p class="text-on-surface-variant font-body text-base font-normal leading-relaxed">
+                  Save discoveries with one clean private note for details you want to remember.
+                </p>
+              </div>
+            </article>
+
+            <article class="flex flex-col gap-6 bg-surface-container-lowest p-8 rounded-xl ambient-shadow">
+              <div class="w-14 h-14 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary mb-2">
+                <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">
+                  list
+                </span>
+              </div>
+              <div class="flex flex-col gap-3">
+                <h3 class="text-on-background font-display text-2xl font-bold leading-tight">
+                  Personal Collection
+                </h3>
+                <p class="text-on-surface-variant font-body text-base font-normal leading-relaxed">
+                  Build a simple history of discoveries, facts, photos, and notes in one place.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="w-full bg-surface-container-high py-12 px-6 lg:px-16 mt-auto">
+      <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-0 lg:px-12">
+        <a class="flex items-center gap-4 text-primary no-underline" href="/" aria-label="Scanora home">
+          <div class="size-5">
+            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path
+                clip-rule="evenodd"
+                d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="text-on-surface font-display text-lg font-bold leading-tight tracking-[-0.015em]">
+            Scanora
+          </h2>
+        </a>
+        <div class="flex flex-wrap items-center justify-center gap-8">
+          <a class="text-on-surface-variant font-label text-sm hover:text-primary transition-colors" href="/privacy">
+            Privacy Policy
+          </a>
+          <a class="text-on-surface-variant font-label text-sm hover:text-primary transition-colors" href="/terms">
+            Terms of Service
+          </a>
+          <a
+            class="text-on-surface-variant font-label text-sm hover:text-primary transition-colors"
+            href="mailto:support@scanora.space"
+          >
+            Support
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
