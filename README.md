@@ -14,11 +14,14 @@ Open `http://localhost:4173`.
 ## Pages
 
 - `/` - landing page
+- `/download/` - download CTA redirect
+- `/support.html` and `/support/` - support/help center
 - `/privacy.html` and `/privacy/` - privacy policy
 - `/terms.html` and `/terms/` - terms of service
 
 Use these in RevenueCat/App Store metadata:
 
+- Support: `https://scanora.space/support`
 - Privacy: `https://scanora.space/privacy`
 - Terms: `https://scanora.space/terms`
 
